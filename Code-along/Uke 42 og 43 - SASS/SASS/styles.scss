@@ -1,12 +1,26 @@
-@use "colors";
-@use "fonts";
-@use "spacing";
+@use "partials/colors";
+@use "partials/fonts";
+@use "partials/spacing";
 
 /* Extension */
 .flex-column{
 	display: flex;
 	flex-direction: column;
 }
+
+@mixin flex($display, $direction) {
+	display: $display;
+	flex-direction: $direction;
+}
+
+@mixin hero($bg, $color, $textalign: center, $padding: 3rem spacing.$spacing-medium){
+	background-color: $bg;
+	color: $color;
+	text-align: $textalign;
+	padding: $padding;
+}
+
+
 
 
 /* Grunnoppsett */
@@ -41,8 +55,7 @@ a {
 /* Toppheader */
 
 .toppheader {
-	//Bruker extension for å la .toppheader arve reglene i flex-column
-	@extend .flex-column;
+	@include flex(flex, column);
 	align-items: center;
 	gap: spacing.$spacing-small;
 	padding: spacing.$spacing-medium;
@@ -116,10 +129,13 @@ a {
 /* Hero */
 
 .hero {
-	background-color: #2b2d42;
-	color: colors.$light-text;
-	text-align: center;
-	padding: 3rem spacing.$spacing-medium;
+	@include hero(red, white, $args..., 4rem)
+
+
+	// background-color: #2b2d42;
+	// color: colors.$light-text;
+	// text-align: center;
+	// padding: 3rem spacing.$spacing-medium;
 }
 
 .hero h1 {
