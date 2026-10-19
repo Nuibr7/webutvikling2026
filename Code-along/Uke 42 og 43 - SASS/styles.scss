@@ -2,7 +2,7 @@
 @use "fonts";
 @use "spacing";
 
-/* Extention */
+/* Extension */
 .flex-column{
 	display: flex;
 	flex-direction: column;
@@ -41,6 +41,7 @@ a {
 /* Toppheader */
 
 .toppheader {
+	//Bruker extension for å la .toppheader arve reglene i flex-column
 	@extend .flex-column;
 	align-items: center;
 	gap: spacing.$spacing-small;

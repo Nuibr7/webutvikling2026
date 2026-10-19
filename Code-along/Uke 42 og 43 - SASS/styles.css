@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Extention */
+/* Extension */
 .flex-column, .kontaktskjema, .sidefot, .hamburger, .toppheader {
   display: flex;
   flex-direction: column;
