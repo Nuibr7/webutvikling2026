@@ -46,6 +46,11 @@ h4,
 .page-title,
 .card-title {
 	font-family: var(--header-font);
+	color: var(--text);
+}
+
+h4:has(.card-title) {
+	margin-top: 0;
 }
 
 p,
